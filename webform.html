@@ -40,9 +40,17 @@ function getParameterByName(name) {
 
 window.onload = function() { 
 
-var prodId = getParameterByName('origen');
+var source = getParameterByName('utm_source');
+var campaign = getParameterByName('utm_campaign');
+var medium = getParameterByName('utm_medium');
+var content = getParameterByName('utm_content');
+var term = getParameterByName('utm_term');
 
-document.getElementsByName("LEADCF30")[0].value=prodId;
+document.getElementsByName("LEADCF28")[0].value=source;
+document.getElementsByName("LEADCF24")[0].value=campaign;
+document.getElementsByName("LEADCF25")[0].value=medium;
+document.getElementsByName("LEADCF27")[0].value=content;
+document.getElementsByName("LEADCF26")[0].value=term;	
 
 }
 
