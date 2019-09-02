@@ -3,6 +3,19 @@
 
 <body>
 
+<script>
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+window.onload = function() { 
+var prodId = getParameterByName('origen');
+document.getElementsByName("LEADCF30")[0].value=prodId;
+}
+	</script>
+  
 <iframe style=width:610px;height:630px; src='https://crm.zoho.com/crm/WebFormServeServlet?rid=5dacefbe608d8315b629c9476100956d4eed7df3f5aeefae15445f6abcd106f2gid576e706bb2bc35a0df5e88a5f022f4ba57baa06c27dbb32fadf4553873ebdff1'></iframe>
 
 </body>
