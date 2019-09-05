@@ -11,19 +11,6 @@
 
 <input type="text" style="display: none;" id="ldeskuid" name="ldeskuid" /> 
 <input type="text" style="display: none;" id="LDTuvid" name="LDTuvid" />
-
-<script type="text/javascript">
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-window.onload = function() { 
-var prodId = getParameterByName('origen');
-document.getElementsByName("LEADCF30")[0].value=prodId;
-}
-</script>
 	
 <table style="width: 600px; background-color: white; color: black;">
 	<tbody><tr><td colspan="2" align="left" style="color: black; font-family: Arial; font-size: 14px; word-break: break-word;"><strong>Información de Contacto</strong></td></tr>
@@ -104,6 +91,12 @@ var mndFileds=new Array('First Name','Last Name');
 		trackVisitor();
 		document.getElementById('formsubmit').disabled=true;
 	}
+	
+	function myFunction() {
+  		var uri = window.location.href;
+  		document.getElementsByName("LEADCF30")[0].value= uri;
+	}
+	window.onload = myFunction;
 </script>
 	
 </form>
